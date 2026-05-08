@@ -8,15 +8,36 @@
     <title>Barbearia do Zé</title>
 </head>
 <body>
+<!-- Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Barbearia <span>do Zé</span></div>
+    <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#">Início</a>
+    <a href="#">Agendar</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+  <div class="sidebar-footer">© 2026 Barbearia do Zé</div>
+</div>
+
 <header class="site-header py-3 border-bottom border-secondary-subtle bg-black">
-  <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">
+  <div class="container d-flex justify-content-between align-items-center">
     <img src="logo.png" alt="Logo Barbearia do Zé" class="brand-logo">
-    <nav class="d-flex flex-wrap justify-content-center gap-3">
+    <nav class="desktop-nav d-none d-lg-flex gap-3">
       <a href="#">Início</a>
       <a href="#">Agendar</a>
       <a href="servicos.html">Serviços</a>
       <a href="contato.html">Contato</a>
     </nav>
+    <button class="hamburger" onclick="openSidebar()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -78,7 +99,7 @@
      </div>
   </div>
 
-  <h2 class="section-title">Localização</h2>
+  <h2 class="section-title">Como Chegar</h2>
   <div class="map-section">
     <iframe src="https://maps.google.com/maps?q=Rua%20das%20Flores%20123%20Ribeirao%20Preto%20SP&t=&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0; border-radius:15px;"></iframe>
   </div>
@@ -90,5 +111,17 @@
     <a href="https://wa.me/5516987654321" target="_blank">ABRIR WHATSAPP</a>
   </div>
 </main>
+<script>
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
 </body>
 </html>

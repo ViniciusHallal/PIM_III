@@ -8,22 +8,43 @@
 <title>Barbearia do Zé</title>
 </head>
 <body>
+<!-- Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Barbearia <span>do Zé</span></div>
+    <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#">Início</a>
+    <a href="#">Agendar</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+  <div class="sidebar-footer">© 2026 Barbearia do Zé</div>
+</div>
+
 <header class="site-header py-3 border-bottom border-secondary-subtle bg-black">
-  <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">
+  <div class="container d-flex justify-content-between align-items-center">
     <img src="logo.png" alt="Logo Barbearia do Zé" class="brand-logo">
-    <nav class="d-flex flex-wrap justify-content-center gap-3">
+    <nav class="desktop-nav d-none d-lg-flex gap-3">
       <a href="#">Início</a>
       <a href="#">Agendar</a>
       <a href="servicos.html">Serviços</a>
       <a href="contato.html">Contato</a>
     </nav>
+    <button class="hamburger" onclick="openSidebar()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
 <main class="container py-5">
   <h2>Corte</h2>
   <div class="card" onclick="toggleGallery('corte')">
-    <div class="service"><div class="service-info"><h3>Corte Masculino</h3><p>Corte moderno e acabamento profissional</p></div><div class="price">R$ 40,00</div></div>
+    <div class="service d-flex justify-content-between align-items-center flex-wrap gap-2"><div class="service-info"><h3>Corte Masculino</h3><p>Corte moderno e acabamento profissional</p></div><div class="price">R$ 40,00</div></div>
     <div id="corte" class="gallery">
       <img src="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2025/10/corte-de-cabelo-masculino-moicano-degrade-606x1024.jpeg" alt="Corte moicano degradê">
       <img src="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2025/10/corte-de-cabelo-masculino-moderno-03-683x1024.jpeg" alt="Corte moderno">
@@ -33,7 +54,7 @@
 
   <h2>Barba</h2>
   <div class="card" onclick="toggleGallery('barba')">
-    <div class="service"><div class="service-info"><h3>Barba Completa</h3><p>Modelagem e hidratação da barba</p></div><div class="price">R$ 30,00</div></div>
+    <div class="service d-flex justify-content-between align-items-center flex-wrap gap-2"><div class="service-info"><h3>Barba Completa</h3><p>Modelagem e hidratação da barba</p></div><div class="price">R$ 30,00</div></div>
     <div id="barba" class="gallery">
       <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a" alt="Barba completa 1">
       <img src="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2025/10/corte-de-cabelo-masculino-tape-fade.jpeg" alt="Barba completa 2">
@@ -42,11 +63,11 @@
   </div>
 
   <h2>Combo</h2>
-  <div class="card"><div class="service"><div class="service-info"><h3>Corte + Barba</h3><p>Pacote completo com desconto</p></div><div class="price">R$ 60,00</div></div><div id="combo" class="gallery"></div></div>
+  <div class="card"><div class="service d-flex justify-content-between align-items-center flex-wrap gap-2"><div class="service-info"><h3>Corte + Barba</h3><p>Pacote completo com desconto</p></div><div class="price">R$ 60,00</div></div><div id="combo" class="gallery"></div></div>
 
   <h2>Luzes</h2>
   <div class="card" onclick="toggleGallery('luzes')">
-    <div class="service"><div class="service-info"><h3>Luzes Masculinas</h3><p>Visual moderno com estilo e personalidade</p></div><div class="price">R$ 80,00</div></div>
+    <div class="service d-flex justify-content-between align-items-center flex-wrap gap-2"><div class="service-info"><h3>Luzes Masculinas</h3><p>Visual moderno com estilo e personalidade</p></div><div class="price">R$ 80,00</div></div>
     <div id="luzes" class="gallery">
       <img src="https://i.pinimg.com/originals/13/95/ba/1395ba88ba4b23aee8f1546289c6139e.jpg" alt="Luzes 1">
       <img src="https://dicasdecabelo.com.br/wp-content/uploads/2024/03/luzes-no-cabelo-masculino-04.jpg" alt="Luzes 2">
@@ -56,7 +77,7 @@
 
   <h2>Bigode</h2>
   <div class="card" onclick="toggleGallery('bigode')">
-    <div class="service"><div class="service-info"><h3>Bigode Estilizado</h3><p>Acabamento detalhado e alinhamento perfeito</p></div><div class="price">R$ 20,00</div></div>
+    <div class="service d-flex justify-content-between align-items-center flex-wrap gap-2"><div class="service-info"><h3>Bigode Estilizado</h3><p>Acabamento detalhado e alinhamento perfeito</p></div><div class="price">R$ 20,00</div></div>
     <div id="bigode" class="gallery">
       <img src="https://i.pinimg.com/736x/f7/27/05/f727053f915116b6ca67f33de4adf7fe.jpg" alt="Bigode 1">
       <img src="https://cdn.sistemawbuy.com.br/arquivos/2ff2a6ae590a5650a33f3f01cd925b45/uploads/images/henry-cavil-de-frente-com-bigode-chevron-65836558e9eda1.png" alt="Bigode 2">
@@ -71,6 +92,16 @@
 function toggleGallery(id) {
  const galeria = document.getElementById(id);
  galeria.classList.toggle('active');
+}
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('active');
+  document.body.style.overflow = '';
 }
 </script>
 </body>
